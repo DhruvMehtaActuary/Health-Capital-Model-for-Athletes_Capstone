@@ -7,7 +7,7 @@ An independent quantitative research project proposing a stochastic framework fo
 
 ## System Architecture
 
-![Architecture](figures/architecture.png)
+Flowchart of Model.png
 
 ---
 

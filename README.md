@@ -1,5 +1,4 @@
 # Health-Capital-Model-for-Athletes_Capstone
-# Health Capital Model for Athletes
 
 An independent quantitative research project proposing a stochastic framework for modelling athlete health, workload optimisation, and injury-risk governance.
 
@@ -7,7 +6,7 @@ An independent quantitative research project proposing a stochastic framework fo
 
 ## System Architecture
 
-![Architecture](figures/Flowchart%20of%20Model.png)
+![System Architecture](Flowchart%20of%20Model.png)
 
 ---
 

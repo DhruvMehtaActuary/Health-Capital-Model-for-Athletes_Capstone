@@ -46,7 +46,7 @@ notebooks/
 
 - This repository currently contains a simplified proof-of-concept implementation of the Health Capital Framework. Future versions will extend the model with latent state estimation, stochastic processes, Monte Carlo simulation, and workload optimisation, as outlined in the research blueprint.
 
-(Proof_of_Concept_Health_Capital_.R)
+![Base Code](Proof_of_Concept_Health_Capital_.R)
 
 ---
 

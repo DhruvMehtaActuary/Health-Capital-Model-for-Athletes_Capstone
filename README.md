@@ -41,11 +41,12 @@ notebooks/
 
 ## Current Status
 
-- ✅ Research blueprint completed
-- ✅ System architecture completed
-- ⏳ Python implementation in progress
-- ⏳ Simulation engine
-- ⏳ Validation
+-  Research blueprint completed
+-  System architecture completed
+
+- This repository currently contains a simplified proof-of-concept implementation of the Health Capital Framework. Future versions will extend the model with latent state estimation, stochastic processes, Monte Carlo simulation, and workload optimisation, as outlined in the research blueprint.
+
+(Proof_of_Concept_Health_Capital_.R)
 
 ---
 

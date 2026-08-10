@@ -6,7 +6,7 @@ HCF is a simulation-first R/Shiny decision-support system for professional crick
 
 1. Install R >= 4.3, then run `Rscript scripts/install_packages.R`.
 2. Run `Rscript scripts/run_validation.R` (the mandatory simulate-then-recover check).
-3. Run `Rscript app.R` and open the displayed local address.
+3. Run `Rscript app.R` and open the displayed local address. [or `shiny::runApp(".")`]
 
 The app creates `data/hcf.sqlite` automatically and can seed itself with a synthetic 15-player / 200-day season from the Admin tab.
 

@@ -1,4 +1,4 @@
-# Health Capital Framework (HCF)
+# Health Capital Framework (HCF) - Model
 
 HCF is a simulation-first R/Shiny decision-support system for professional cricket fast bowlers. It models latent structural integrity, fatigue, recovery capacity and micro-damage as a jump-diffusion, estimates state with `pomp`, and presents seven-day availability and workload scenarios.
 

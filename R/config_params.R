@@ -1,0 +1,45 @@
+# Single source of truth for every tunable numerical model parameter.
+hcf_config <- function() list(
+  season_days = 200L, squad_size = 15L, dt = 1,
+  baseline_S = 0, baseline_R = 0,
+  kappa_F = 0.55, kappa_R = 0.18, kappa_S = 0.025,
+  alpha_F = 0.75, alpha_R = 0.45, beta_R = 0.20,
+  gamma_D = 0.16, delta_D = 0.025, lambda_S = 0.04,
+  sigma_F = 0.22, sigma_R = 0.14, sigma_S = 0.08,
+  jump_lambda_0 = 0.004, jump_lambda_workload = 0.006, jump_lambda_team = 0.003,
+  jump_mean = 0.45,
+  injury_lambda_0 = 0.0015,
+  theta_S = 0.34, theta_F = 0.42, theta_R = 0.20, theta_D = 0.48,
+  theta_age = 0.12, theta_hist = 0.35,
+  age_reference = 27, age_sd = 4,
+  # Fixed role-reference distributions: the same input value has the same
+  # meaning for every player and date. These are intentionally tunable.
+  workload_means = c(training_minutes=70, match_minutes=15, overs_bowled=1.5,
+    high_intensity_distance=600, sprint_count=16, bowling_speed=132, session_rpe=6),
+  workload_sds = c(training_minutes=35, match_minutes=35, overs_bowled=2.5,
+    high_intensity_distance=350, sprint_count=10, bowling_speed=5, session_rpe=2),
+  workload_weights = c(training_minutes=.16, match_minutes=.16, overs_bowled=.24,
+    high_intensity_distance=.12, sprint_count=.08, bowling_speed=.12, session_rpe=.12),
+  workload_base = .75, workload_scale = .45,
+  recovery_means = c(sleep_hours=7.5, wellness_score=6.5, muscle_soreness=2.5,
+    recovery_score=65, rest_days=3),
+  recovery_sds = c(sleep_hours=1, wellness_score=1.8, muscle_soreness=1,
+    recovery_score=15, rest_days=2),
+  recovery_weights = c(sleep_hours=.25, wellness_score=.30, muscle_soreness=.18,
+    recovery_score=.17, rest_days=.10),
+  recovery_base = .70, recovery_scale = .35,
+  # Latent states are dimensionless. This fixed population calibration is also
+  # used by the POMP measurement model and forward decision engine.
+  state_reference = list(S=c(mean=0,sd=1), F=c(mean=0,sd=1),
+    R=c(mean=0,sd=1), D=c(mean=0,sd=1)),
+  hazard_z_limit = 2.5,
+  h_weights = c(S = 1, F = 1, R = 1, D = 1),
+  risk_low = 0.10, risk_high = 0.20,
+  horizon_days = 7L, monte_carlo_paths = 1000L,
+  wellness_scale_max = 10, default_optional = list(high_intensity_distance = 600,
+    sprint_count = 16, bowling_speed = 132, session_rpe = 6, soreness = 2.5,
+    muscle_soreness = 2.5, recovery_score = 65, rest_days = 3,
+    pitch_hardness = 0, travel_tier = 0, heat_index = 0),
+  scenarios = c(`-15% workload` = 0.85, `Current plan` = 1, `+10% workload` = 1.10, `+20% workload` = 1.20),
+  seed = 20260810L
+)

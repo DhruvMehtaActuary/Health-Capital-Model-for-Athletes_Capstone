@@ -1,0 +1,1 @@
+testthat::test_that("simulator emits full long panel",{ source("R/config_params.R");source("R/model_util.R");source("R/model_simulator.R");s<-simulate_season(3,20);testthat::expect_equal(nrow(s$panel),60);testthat::expect_true(all(c("S","F","R","D","injury_event","overs_bowled") %in% names(s$panel)));testthat::expect_true(all(s$panel$D>=0)) })

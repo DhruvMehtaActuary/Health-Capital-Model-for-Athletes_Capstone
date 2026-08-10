@@ -1,55 +1,21 @@
-# Health-Capital-Model-for-Athletes_Capstone
+# Health Capital Framework (HCF)
 
-An independent quantitative research project proposing a stochastic framework for modelling athlete health, workload optimisation, and injury-risk governance.
+HCF is a simulation-first R/Shiny decision-support system for professional cricket fast bowlers. It models latent structural integrity, fatigue, recovery capacity and micro-damage as a jump-diffusion, estimates state with `pomp`, and presents seven-day availability and workload scenarios.
 
----
+## Install and run
 
-## System Architecture
+1. Install R >= 4.3, then run `Rscript scripts/install_packages.R`.
+2. Run `Rscript scripts/run_validation.R` (the mandatory simulate-then-recover check).
+3. Run `Rscript app.R` and open the displayed local address.
 
-![System Architecture](Flowchart%20of%20Model.png)
+The app creates `data/hcf.sqlite` automatically and can seed itself with a synthetic 15-player / 200-day season from the Admin tab.
 
----
+## Structure
 
-## Overview
+- `R/config_params.R`: all tunable parameters.
+- `R/model_*.R`: simulator, POMP estimator and forward scenario engine; no Shiny dependency.
+- `R/db.R`: source-agnostic SQLite repository.
+- `R/app_*.R`: Shiny modules.
+- `scripts/run_validation.R`: mandatory simulator-to-estimator recovery report.
 
-This project introduces the concept of **Health Capital**, a latent multidimensional representation of an athlete's physiological condition that evolves continuously through training, recovery, and stochastic injury events.
-
-The objective is to provide a quantitative decision-support framework that balances athlete performance with long-term health.
-
----
-
-## Repository Structure
-
-docs/
-
-- Blueprint
-- Mathematical Framework
-
-figures/
-
-- Architecture Diagram
-
-src/
-
-- Python implementation
-
-notebooks/
-
-- Simulation examples
-
----
-
-## Current Status
-
--  Research blueprint completed
--  System architecture completed
-
-- This repository currently contains a simplified proof-of-concept implementation of the Health Capital Framework. Future versions will extend the model with latent state estimation, stochastic processes, Monte Carlo simulation, and workload optimisation, as outlined in the research blueprint.
-
-![Base Code](Proof_of_Concept_Health_Capital_.R)
-
----
-
-## Author
-
-Dhruv Mehta
+**Decision-support tool for coaching and medical staff. Not a medical diagnosis. Does not replace clinical judgment or medical clearance.**

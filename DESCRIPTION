@@ -1,0 +1,8 @@
+Package: hcf
+Type: Project
+Title: Health Capital Framework
+Version: 0.1.0
+Description: Simulation-first decision support for professional cricket fast bowlers.
+License: MIT
+Encoding: UTF-8
+Imports: shiny, bslib, DBI, RSQLite, data.table, ggplot2, DT, pomp, jsonlite, stats, utils
